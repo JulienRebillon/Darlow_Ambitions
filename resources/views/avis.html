@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>AmbitionsCoaching</title>
+    </head>
+    <body>
+        <header>
+            <div class="flex bg-white">
+                <!-- burger navigation -->
+                <nav role="navigation">
+                    <div id="menuToggle" class="block relative top-50 left-50 z-1 ">
+                      <!--
+                      A fake / hidden checkbox is used as click reciever,
+                      so you can use the :checked selector on it.
+                      -->
+                      <input type="checkbox" class="block w-[40px] h-[32px] absolute -top-7 -left-5 z-2 opacity-0"/>
+                      
+                      <!--
+                      Some spans to act as a hamburger.
+                      
+                      They are acting like a real hamburger,
+                      not that McDonalds stuff.
+                      -->
+                      <span class="bg-black block w-[33] h-[4] mb-5 relative rounded z-1"></span>
+                      <span class="bg-black block w-[33] h-[4] mb-5 relative rounded z-1"></span>
+                      <span class="bg-black block w-[33] h-[4] mb-5 relative rounded z-1"></span>
+                      
+                      <!--
+                      Too bad the menu has to be inside of the button
+                      but hey, it's pure CSS magic.
+                      -->
+                        <ul id="menu" class="flex flex-col items-center">
+                            
+                            <a href="#"><li><img src="/images/tarifs/2.png" class="w-36"></li></a>
+
+                            <a href="{{ route('apropos') }}"><li class="my-2 text-black">A propos</li></a>
+                            <a href="{{ route('tarifs') }}"><li class="my-2 text-black">Tarifs</li></a>
+                            <a href="{{ route('blog') }}"><li class="my-2 text-black ">Blog</li></a>
+                            <a href="{{ route('avis') }}"><li class="my-2 text-black">Avis</li></a>
+                            <a href="{{ route('contact') }}"><li class="mt-2 mb-6  text-black font-bold">Contact</li></a>
+                            <div class="flex">
+                                <img src="/images/picto/icons8-search-58.png" alt="" class="w-6 h-6 mx-2 mt-2">
+                    
+                                <a href="{{ route('contact') }}" class="">
+                                    <div class="flex w-50 text-white border-red rounded bg-red-500 px-4 pt-2 pb-3">
+                                    <img src="/images/picto/phone.png" class="w-6 mr-2">
+                                    <p class="text-white">+800 100 900</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            
+                        </ul>
+                    </div>
+                </nav>
+                
+                <div id="container_logo" class="">
+                    <a href="{{ route('home') }}" ><img src="" alt="" /></a>
+                </div>
+
+                <!-- menu de navigation desktop-->
+                <div class="flex hidden">
+                    <a href="{{ route('apropos') }}" class="text-black">A propos<br/>
+                    <div class=" w-2 h-2 rounded bg-black-900 hover:bg-red-700"></div></a>
+
+                    <a href="{{ route('tarifs') }}" class="text-black">Tarifs<br/>
+                        <div class=" w-2 h-2 rounded bg-black-900 hover:bg-red-600"></div></a>
+
+                    <a href="{{ route('blog') }}" class="text-black">Blog<br/>
+                        <div class=" w-2 h-2 rounded hover:bg-red-600"></div></a>
+                    
+                    <a href="{{ route('avis') }}" class="text-black">Avis<br/>
+                        <div class=" w-2 h-2 rounded bg-black-900 hover:bg-red-600"></div></a>
+
+                    <a href="{{ route('contact') }}" class="text-black">contact<br/>
+                        <div class=" w-2 h-2 rounded bg-red-600"></div></a>
+
+                    <img src="/images/picto/icons8-search-58.png" alt="" class="">
+                    
+                    <a href="{{ route('contact') }}" class="">
+                        <div class="flex w-50 text-white border-red rounded-full bg-red-600 px-4 pt-2 pb-3">
+                            <img src="/images/picto/phone.png" class="w-6 mr-2">
+                            <p class="text-white">+800 100 900</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+
+
+
+
+        <main>
+            <div id="section_1" class="flex flex-col bg-blue-900 px-12">
+                <p class="text-lg text-white mt-20 mb-4">CALL TODAY</p>
+                <h1 class="text-4xl lg:text-6xl text-white mb-12 justify-center">More Traffic</br>More Conversions</br><span class="font-bold">One Solution</span></h1>
+                <button class="border-white border-2 w-56 h-14 rounded items-center mb-28">
+                    <div class="flex ml-3">
+                        <img src="/images/picto/phone.png" alt="" class="w-9 h-9 ml-3">
+                        <p class="text-white text-xl ml-2 mt-1">+800 100 900</p>
+                    </div>
+                </button>
+                
+                
+            </div>
+
+            <div id="section_2" class="flex flex-col bg-white px-8 py-8 items-center">
+               <p class="text-sm mt-12 mb-6">TESTIMONIALS</p>
+               <h2 class="text-4xl font-bold mx-12 mb-24">What Our Clients Say</h2>
+               <div class="bg-red-600 ">
+                    <p class="text-white text-xl align-middle pt-12 px-14">“Flexibility in charting, ease of managing data, and robust user access tools lets us focus our business strategy and create true value for our clients."
+                    </p>
+                    <p class="justify-items-center text-white text-sm mt-5">JAMES MIDDLETONE</p>
+                    <p class="text-gray-200 text-sm mb-6">CEO of Lorem Ipsum</p>
+
+               </div>
+
+               <div class="bg-white flex flex-col lg:flex-row"><!--Container avis-->
+                <!-- Avis client-->
+                <div class="bg-gray-100 flex flex-col  py-4 px-12 my-6 mx-6 lg:w-10/12">
+                    <h3 class="font-bold text-xl my-3">"A Serious Time Saver"</h3>
+                    <img src="/images/picto/stars.png" alt="" class="w-16 -my-5">
+                    <p class="text-black text-xs my-3">They’re built to scale and handle a lot more accounts than other companies could handle. They take a personal interest in each and every one of their clients.</p>
+
+                    <img src="/images/Avis/testimonials_01.jpg" alt="" class="rounded-full w-12 my-2">
+                    <p class="text-sm">JAMES CORDON</p>
+                    <p class="text-sm">CEO of Applauz</p>
+
+                </div>
+
+                <div class="bg-gray-100 flex flex-col  py-4 px-12 my-6 mx-6 lg:w-10/12">
+                    <h3 class="font-bold text-xl my-3">“An Extra Hour Each Day”</h3>
+                    <img src="/images/picto/stars.png" alt="" class="w-16 -my-5">
+                    <p class="text-black text-xs my-3">They quickly developed the requisite knowledge about our industry and internal processes. We couldn’t have achieved the same level of success without them.</p>
+
+                    <img src="/images/Avis/testimonials_05.jpg" alt="" class="rounded-full w-12 my-2">
+                    <p class="text-sm">ALICE GROWER</p>
+                    <p class="text-sm">Clients</p>
+
+                </div>
+            </div>
+
+            <div id="section_3" class="flex flex-row my-6 w-full">
+              
+                <div class="border-t border-gray-500 w-full mx-4 mt-2"></div>
+            
+                <div class="w-full">
+                    <p class="text-xs md:text-sm lg:text-lg">OVER 500 AMAZING CLIENTS</p>
+                </div>
+
+                <div class="border-t border-gray-500 w-full mr-4 mt-2"></div>
+
+            </div>   
+
+            <div id="section_4" class="items-center flex flex-col">
+                <p class="text-sm mt-12 mb-6">BENEFITS</p>
+                <h2 class="text-4xl font-bold mx-12 mb-24">Why Choose Ipsum</h2>
+
+                <div class="flex flex-col lg:flex-row">
+                    <div>
+                        <div class="w-6/12 lg:w-full mt-20">
+                            <div class="flex flex-row">
+                                <img src="/images/picto/trend.png" alt="" class="w-9 h-9 mr-3 mt-4">
+                                <p class="text-2xl font-bold w-9/12">Increase Your Monthly Sales</p>
+                            </div>
+                            <p class="text-sm mt-2 mb-10">Nanotechnology immersion along the information highway will close the loop on focusing solely</p>
+                        </div>
+
+                        <div class="w-6/12 lg:w-full mt-4">
+                            <div class="flex flex-row">
+                                <img src="/images/picto/icons8-search-58.png" alt="" class="w-9 h-9 mr-3 mt-4">
+                                <p class="text-2xl font-bold w-9/12">Get Monthly Reports</p>
+                            </div>
+                            <p class="text-sm mt-2 mb-10">Podcasting operational change management inside of workflows to establish a framework.</p>
+                        </div>
+                    </div>
+
+                    <img src="/images/Avis/image_illustrations_12.png" alt="" class="w-full mx-8 my-8">
+
+                    <div>
+                        <div class="w-6/12 lg:w-full mt-20">
+                            <div class="flex flex-row">
+                                <img src="/images/picto/pieChart.png" alt="" class="w-9 h-9 mr-3 mt-4">
+                                <p class="text-2xl font-bold w-9/12">Grow Your Customer Base</p>
+                            </div>
+                            <p class="text-sm mt-2 mb-10">Taking seamless key performance indicators offline to maximise the long tail on convergence.</p>
+                        </div>
+
+                        <div class="w-6/12 lg:w-full mt-4">
+                            <div class="flex flex-row">
+                                <img src="/images/picto/icons8-idea-32.png" alt="" class="w-9 h-9 mr-3 mt-4">
+                                <p class="text-2xl font-bold w-9/12">Beat Your Competition</p>
+                            </div>
+                            <p class="text-sm mt-2 mb-10">Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive work.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+
+
+        <footer class="bg-black h-auto ">
+            
+
+            <div class="flex flex-col ml-6 mt-20 lg:flex-row" >
+                <div>
+                    <img src="/images/LOGO-50K-POUR-CENT-4.png" class="lg:w-48 ">
+                </div>
+                <div class="text-white flex flex-col mx-20">
+                    <p class="text-bold mb-6">Product</p>
+                    <a href="" id="" class="text-xs mb-2">Clients</a>
+                    <a href="" id="" class="text-xs mb-2">History</a>
+                    <a href="" id="" class="text-xs mb-2">Team</a>
+                    <a href="" id="" class="text-xs mb-2">FAQ</a>
+                    <a href="" id="" class="text-xs mb-16">Get Quote</a>
+                </div>
+
+                <div class="text-white flex flex-col mx-20">
+                    <p class="text-bold mb-6">Company</p>
+                    <a href="" id="" class="text-xs mb-2">Clients</a>
+                    <a href="" id="" class="text-xs mb-2">History</a>
+                    <a href="" id="" class="text-xs mb-2">Team</a>
+                    <a href="" id="" class="text-xs mb-2">FAQ</a>
+                    <a href="" id="" class="text-xs mb-16">Get Quote</a>
+                </div>
+
+                <div class="text-white flex flex-col ml-12 mr-4 lg:w-4/12">
+                    <p class="mb-6 font-bold">Suivez-moi sur les réseaux sociaux</p>
+                    <div class="flex mb-6">
+                        <img src="/images/picto/" alt="" class="">
+                        <img src="/images/picto/instagram.png" alt="" class="w-6">
+                    </div>
+                    <div class="flex mb-6">
+                        <img src="/images/picto/phone.png" class="w-9">
+                        <p class="text-white font-bold">+33 6 14 22 23 30</p>
+                    </div>
+                    <p class="text-xs mb-8">Subscribe to our newsletter today to receive updates on the latest news, releases and special offers. We respect your privacy. Your information is safe.</p>
+
+                    <form action="" method="POST" class="mr-4">
+
+                        <input type="text" name="prenom" value="Prénom" class="w-80 text-white text-sm bg-black border-white pt-2 pb-3 mt-2 border-b border-white ">
+                        <input type="mail" name="email" value="Your E-mail" class="w-80 text-white text-sm bg-black border-white pt-2 pb-3 mt-2 border-b border-white ">
+                        <button class="w-36 text-white border-2 rounded-full bg-black border-white rounded-full px-8 pt-2 pb-3 mt-2 mb-8">Go </button>
+                        
+                    </form>
+
+
+
+
+                </div>
+
+                
+
+            </div>
+
+            <p class="text-gray-400 text-xs pb-24">©2022 50Kpourcentcoaching. All rights reserved by <a href="" class="font-bold">Darlow Paris</a> | <a href="" class="font-bold">Mentions légales</a> </p>
+
+        </footer>
+
+
+    </body>
